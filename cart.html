@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Le Pope</title>
+    <link rel="stylesheet" href="./galeria.css">
+</head>
+<body>
+
+    <header>
+    <img class="imagen-header" src="./img.lepope/Logo.lepope.jpeg" alt="imagen logo en el header">
+    <h1 class="carrito">Carrito de compras</h1>
+    </header>
+
+
+    <div id="cart-container"></div>
+
+    <script>
+        // Recuperar el carrito del localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function renderCart() {
+            const container = document.getElementById('cart-container');
+            container.innerHTML = '';
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+
+                itemElement.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <p>Precio: ${item.price}</p>
+                    <p>Cantidad: ${item.quantity}</p>
+                `;
+                container.appendChild(itemElement);
+            });
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p>Tu carrito está vacío.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+
+
+
+
+    
+<p class="parrafo">Síguenos en nuestras redes sociales:</p>
+<div class="social-media">
+    <a href="https://www.instagram.com/lepope.ok?igsh=ZHBudW5mZDFsZDE0" target="_blank" aria-label="Instagram">
+        <img src="img.lepope/instagram (1).png" alt="Instagram">
+    </a>
+   
+    <a href="https://www.tiktok.com/@lepopexmetro?_t=8phBWCyJVp7&_r=1" target="_blank" aria-label="TikTok">
+        <img src="img.lepope/tik-tok (3).png" alt="TikTok">
+    </a>
+</div>
+
+
+    
+<div class="whatsapp">
+    <a href="https://wa.me/1234567890" target="_blank" aria-label="WhatsApp">
+        <img src="img.lepope/whatsapp.png" alt="WhatsApp">
+    </a>
+</div>
+
+    <script src="galeria.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* Estilos generales */
+body {
+    height: 100%;
+    font-family: "Nerko One", sans-serif;
+    font-size: 16px; /* Tamaño de fuente más pequeño para móviles */
+    margin: 0;
+    padding: 0;
+    background-color: #444444;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    padding-bottom: 5px; /* Espacio suficiente para el footer */
+}
+
+header {
+    cursor: pointer; /* Cambia el cursor a mano para indicar que es clicable */
+    transition: transform 0.3s ease; /* Animación suave para el cambio de tamaño */
+    background-color: #010101;
+    color: #fff;
+    padding: 10px; /* Ajusta el padding para pantallas pequeñas */
+    display: flex;
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center; /* Centra verticalmente los elementos */
+    position: relative; /* Necesario para posicionar el carrito absolutamente */
+}
+
+.imagen-header {
+    width: 300px; /* Tamaño de la imagen en el header, ajustado para móviles */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+nav {
+    background-color: #444;
+    padding: 10px 0;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 5px; /* Ajusta el margen para pantallas pequeñas */
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 35px; /* Tamaño de fuente ajustado para pantallas pequeñas */
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #555;
+    color: #f002a1;
+    border-radius: 5px;
+    transform: scale(1.1); /* Aumenta el tamaño del enlace en un 10% */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Agrega una sombra al enlace */
+}
+
+.cart {
+    position: absolute;
+    right: 20px; /* Alinea el carrito a la derecha con un margen de 20px */
+    top: 45%; /* Alinea verticalmente en el centro del header */
+    transform: translateY(-50%); /* Ajusta el posicionamiento vertical para centrarlo */
+    display: flex;
+    align-items: center;
+}
+
+.cart img {
+    height: 60px; /* Ajusta el tamaño del ícono del carrito para pantallas pequeñas */
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #444444; /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto del pie de página */
+    text-align: center; /* Centra el texto en el pie de página */
+    padding: 10px 0; /* Espacio interno arriba y abajo del texto del pie de página */
+}
+
+.product-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos se muevan a la siguiente línea si no caben en la fila actual */
+    justify-content: center; /* Centra los productos horizontalmente */
+    gap: 15px; /* Espacio entre los productos */
+}
+
+.product-item {
+    flex: 1 1 calc(50% - 30px); /* Cada producto ocupará aproximadamente la mitad del ancho del contenedor menos el espacio entre ellos */
+    max-width: calc(50% - 30px); /* Asegura que el producto no exceda el ancho calculado */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho total del elemento */
+    margin-bottom: 20px;
+    border: 2px solid rgb(0, 0, 0); /* Añade un borde azul alrededor del producto */
+    border-radius: 10px; /* Redondea las esquinas del borde */
+    padding: 10px; /* Añade un espacio interno entre el borde y el contenido */
+}
+
+.product-info {
+    margin-bottom: 10px;
+}
+
+.product-item img {
+    width: 100%; /* Ajusta la imagen al ancho del contenedor del producto */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 200px; /* Establece una altura máxima fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área del contenedor, recortando si es necesario */
+    border-radius: 5px; /* Opcional: redondea las esquinas de la imagen */
+}
+
+.product-item h3, .product-item p {
+    margin: 0;
+}
+
+.social-media {
+    margin-top: 10px;
+    padding: 10px; /* Ajusta el padding para pantallas pequeñas */
+}
+
+.social-media a {
+    margin: 0 5px; /* Ajusta el margen para pantallas pequeñas */
+    display: inline-block;
+}
+
+.social-media img {
+    width: 50px; /* Tamaño ajustado para pantallas pequeñas */
+    vertical-align: middle; /* Alinea los íconos verticalmente con el texto */
+}
+
+/* Estilo para el ícono de WhatsApp */
+.whatsapp {
+    position: fixed; /* Posiciona el ícono en relación a la ventana del navegador */
+    bottom: 20px; /* Distancia desde el borde inferior */
+    right: 20px; /* Distancia desde el borde derecho */
+    animation: bounce 2s infinite; /* Aplica la animación de rebote */
+}
+
+.whatsapp a {
+    display: inline-block;
+}
+
+.whatsapp img {
+    height: 60px; /* Tamaño ajustado para pantallas pequeñas */
+    vertical-align: middle; /* Alinea el ícono verticalmente con el texto */
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Media Queries para dispositivos móviles y tablets */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px; /* Ajusta el tamaño de fuente para tablets */
+    }
+
+    header {
+        flex-direction: column; /* Cambia la dirección del flex a columna para pantallas más pequeñas */
+    }
+
+    .imagen-header {
+        width: 120px; /* Ajusta el tamaño de la imagen para pantallas más pequeñas */
+    }
+
+    .nav-list {
+        flex-direction: column; /* Cambia la dirección del flex a columna para pantallas más pequeñas */
+    }
+
+    .nav-list li {
+        margin: 5px 0; /* Ajusta el margen para pantallas más pequeñas */
+    }
+
+    .product-item {
+        flex: 1 1 calc(100% - 20px); /* Cada producto ocupará el 100% del ancho del contenedor menos el espacio entre ellos */
+        max-width: calc(100% - 20px); /* Asegura que el producto no exceda el ancho calculado */
+    }
+
+    .social-media img {
+        width: 40px; /* Tamaño ajustado para pantallas más pequeñas */
+    }
+
+    .whatsapp img {
+        height: 50px; /* Tamaño ajustado para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Ajusta el tamaño de fuente para móviles */
+    }
+
+    .imagen-header {
+        width: 100px; /* Tamaño más pequeño de la imagen para móviles */
+    }
+
+    .nav-list a {
+        font-size: 14px; /* Tamaño de fuente ajustado para enlaces en móviles */
+    }
+
+    .product-item {
+        flex: 1 1 calc(100% - 20px); /* Cada producto ocupará el 100% del ancho del contenedor menos el espacio entre ellos */
+        max-width: calc(100% - 20px); /* Asegura que el producto no exceda el ancho calculado */
+    }
+
+    .social-media img {
+        width: 30px; /* Tamaño ajustado para pantallas más pequeñas */
+    }
+
+    .whatsapp img {
+        height: 40px; }
+    }

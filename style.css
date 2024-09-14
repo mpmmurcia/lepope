@@ -1,0 +1,130 @@
+/* General Reset */
+html, body {
+    height: 100%; /* Asegura que el body ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+/* Estilos del cuerpo */
+body {
+    background: url('img.lepope/Pizzaxmetro2.jpeg') no-repeat center center fixed; /* Configura la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra toda la ventana del navegador */
+    color: #fff; /* Color del texto */
+    font-family: "Nerko One", Arial, sans-serif; /* Fuente por defecto */
+    font-size: 35px; /* Tamaño de fuente por defecto, se ajustará en media queries */
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Fondo de color negro como respaldo */
+    text-align: center;
+}
+
+/* Animaciones */
+@keyframes colorChange {
+    0% { color: #fff; }
+    50% { color: rgb(179, 224, 15); }
+    100% { color: #ff0404; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Header */
+header {
+    color: #c0aeae;
+    animation: colorChange 3s infinite, bounce 1s infinite;
+    padding: 10px;
+}
+
+/* Estilo general para todas las imágenes */
+img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+    max-width: 425px; /* Limita el tamaño máximo de la imagen */
+    cursor: pointer; /* Cambia el cursor a mano para indicar que es clicable */
+    transition: transform 0.3s ease, border-radius 0.3s ease; /* Animaciones suaves para el cambio de tamaño y redondeo de bordes */
+    border-radius: 250px; /* Radio de borde para redondear las esquinas de la imagen */
+}
+
+/* Estilo para la imagen cuando el ratón pasa sobre ella */
+img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen en un 10% */
+    border-radius: 20px; /* Ajusta el radio de borde al pasar el ratón */
+}
+
+/* Redefinir estilos de párrafos y redes sociales */
+.parrafo {
+    font-size: 4vw; /* Tamaño de fuente relativo al ancho de la ventana */
+    color: #fff; /* Color del texto del párrafo */
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+}
+
+.social-media {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 10vw; /* Tamaño relativo al ancho de la ventana */
+    max-width: 60px; /* Tamaño máximo para evitar que sea demasiado grande */
+}
+
+/* WhatsApp */
+.whatsapp {
+    position: fixed; /* Posiciona el ícono en relación a la ventana del navegador */
+    bottom: 20px; /* Distancia desde el borde inferior */
+    right: 20px; /* Distancia desde el borde derecho */
+    animation: bounce 2s infinite; /* Aplica la animación de rebote */
+}
+
+.whatsapp a {
+    display: inline-block;
+}
+
+.whatsapp img {
+    width: 15vw; /* Tamaño relativo al ancho de la ventana */
+    max-width: 120px; /* Tamaño máximo para evitar que sea demasiado grande */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Ajusta el tamaño de fuente en tablets */
+    }
+
+    .parrafo {
+        font-size: 5vw; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    }
+
+    .social-media img {
+        width: 12vw; /* Ajusta el tamaño para pantallas más pequeñas */
+    }
+
+    .whatsapp img {
+        width: 20vw; /* Ajusta el tamaño para pantallas más pequeñas */
+        max-width: 100px; /* Tamaño máximo para evitar que sea demasiado grande */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Ajusta el tamaño de fuente en móviles */
+    }
+
+    .parrafo {
+        font-size: 6vw; /* Ajusta el tamaño de fuente para móviles */
+    }
+
+    .social-media img {
+        width: 15vw; /* Ajusta el tamaño para móviles */
+    }
+
+    .whatsapp img {
+        width: 25vw; /* Ajusta el tamaño para móviles */
+        max-width: 80px; /* Tamaño máximo para evitar que sea demasiado grande */
+    }
+}
